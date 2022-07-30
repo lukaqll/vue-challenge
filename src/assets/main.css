@@ -1,0 +1,9 @@
+@import "./loader.css";
+
+.main-wrap{
+	padding-top: 3rem;
+}
+
+.theme--light.v-application {
+  background: #eee !important;
+}
