@@ -28,7 +28,7 @@
                     </v-list-item>
                     <v-list-item exact to="/profile" v-if="!!$useStore.user">
                         <v-icon dense class="mr-4">mdi-chevron-right</v-icon>
-                        My Account
+                        My Profile
                     </v-list-item>
 
                     <v-list-item exact v-if="!!$useStore.user" @click="logout">
