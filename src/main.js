@@ -9,10 +9,16 @@ import { useStore } from './services/store'
 const pinia = createPinia()
 Vue.use(PiniaVuePlugin)
 Vue.use(pinia)
-Vue.prototype.$useStore = useStore() 
+Vue.prototype.$useStore = useStore()
+
+Vue.mixin({
+	data: () => ({
+		mainLoader: false,
+	})
+})
 
 new Vue({
-  router,
-  vuetify,
-  render: (h) => h(App)
+	router,
+	vuetify,
+	render: (h) => h(App)
 }).$mount('#app')

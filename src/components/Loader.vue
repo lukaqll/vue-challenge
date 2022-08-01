@@ -1,5 +1,5 @@
 <template>
-    <div class="loader-overlay">
+    <div>
         <div class="loader">
             <span class="ball"></span>
             <span class="ball"></span>

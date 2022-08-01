@@ -39,3 +39,19 @@
         transform:  translateY(-50px) scale(1);
     }
 }
+
+.loader-overlay{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    z-index: 10;
+    top: 0;
+    position: fixed;
+}
+
+.theme--dark .loader-overlay{
+    background-color: #121212;
+}

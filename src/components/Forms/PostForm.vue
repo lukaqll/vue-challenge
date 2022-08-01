@@ -43,6 +43,11 @@ export default {
         }
     },
 
+    watch: {
+        post(v){
+            this.formData = {...v}
+        }
+    },
     methods: {
 
         errorMessageHandle(field) {

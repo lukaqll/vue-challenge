@@ -1,8 +1,8 @@
 import http from '../plugins/axios.js'
 
 export default {
-    all: async (params) => {
-        const response = await http.get('public/v2/posts', { params })
+    all: async (page=1) => {
+        const response = await http.get(`public/v2/posts?page=${page}`, {})
         return response
     },
     my: async (userId) => {
