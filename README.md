@@ -14,7 +14,7 @@ link do desafio: https://gist.github.com/olimarferraz/fc4290ba8c0e4265d4aba10652
 E-mail para contato lukaquinellato@gmail.com
 ## Instalação
 
-Instale vue-challenge com npm
+Clone o repositório Git
 
 ```bash
   git clone https://github.com/lukaqll/vue-challenge.git
