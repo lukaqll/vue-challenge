@@ -8,22 +8,29 @@
 			class="pt-0"
 			dark
 		>
-			<v-app-bar-title>Vue Challenge</v-app-bar-title>
+			<router-link
+				is="v-app-bar-title"
+				to="/"
+			>
+				Vue Challenge
+			</router-link>
 
 			<v-tabs align-with-title>
-				<v-tab to="/posts">Posts</v-tab>
-				<v-tab to="/my-posts">My Posts</v-tab>
+				<v-tab 
+					to="/my-posts"
+					v-if="$useStore.user"
+				>My Posts</v-tab>
 			</v-tabs>
 			<v-spacer></v-spacer>
 
 			<v-btn
-				href="https://github.com/vuetifyjs/vuetify/releases/latest"
-				target="_blank"
+				to="/login"
 				text
+				v-if="!$useStore.user"
 			>
-				<span class="mr-2">Latest Release</span>
-				<v-icon>mdi-open-in-new</v-icon>
+				Sign in
 			</v-btn>
+			<v-btn v-else @click="logout" text>Log Out</v-btn>
 		</v-app-bar>
 		
 		<v-main app>
@@ -42,9 +49,15 @@
 
 export default {
   name: 'App',
-
-  data: () => ({
-    //
-  }),
+  
+  methods: {
+	  logout() {
+		  localStorage.removeItem('user_id')
+		  this.$useStore.setUser(null).then(() => {
+			  if(this.$route.path != '/post')
+			  	this.$router.push('/posts')
+		  })
+	  }
+  }
 };
 </script>

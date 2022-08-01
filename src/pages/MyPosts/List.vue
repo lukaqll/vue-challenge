@@ -37,11 +37,12 @@
 
 import posts from '../../repositories/posts'
 export default {
-    data: () => ({
-        userId: '4916',
-        posts: [],
-        loading: true
-    }),
+    data(){
+        return {
+            posts: [],
+            loading: true
+        }
+    },
 
     mounted() {
         this.listMyPosts()
@@ -50,14 +51,15 @@ export default {
     methods: {
 
         listMyPosts() {
-            posts.my( this.userId )
+            if(!this.$useStore.user){
+                this.$router.push('/posts')
+                return
+            }
+
+            posts.my( this.$useStore.user.id )
                  .then(resp => this.posts = [...resp.data])
                  .finally(() => this.loading = false)
         },
-
-        click(){
-            alert('te amo')
-        }
     }
 }
 </script>

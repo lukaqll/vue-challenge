@@ -25,7 +25,6 @@ import PostForm from '../../components/Forms/PostForm.vue'
 export default {
     components: {PostForm},
     data: () => ({
-        userId: '4916',
         errors: [],
         loading: false,
     }),
@@ -35,12 +34,14 @@ export default {
         createPost(post) {
             this.loading = true
             this.errors = []
-            posts.create(this.userId, post)
+            posts.create(this.$useStore.user.id, post)
                  .then(resp => {
                     this.$router.push('/my-posts')
                  })
-                 .catch(e => this.errors = [...e.response.data])
-                 .finally(() => this.loading = false)
+                 .catch(e => {
+                    this.errors = [...e.response.data]
+                    this.loading = false
+                })
         },
     }
 }
