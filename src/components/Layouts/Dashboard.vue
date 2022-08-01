@@ -1,12 +1,8 @@
 <template>
 	<div>
-		<v-app-bar app fixed hide-on-scroll class="app-bar" color="white" elevation="0">
+		<v-app-bar app fixed hide-on-scroll class="app-bar" elevation="2" >
 			<v-spacer></v-spacer>
-
-			<v-app-bar-title>
-				<v-img width="100" src="/images/blog_logo.gif"></v-img>
-			</v-app-bar-title>
-
+			<h3 class="main-title align-self-center m-0">My VueJS Blog.</h3>
 			<v-spacer></v-spacer>
 		</v-app-bar>
 

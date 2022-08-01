@@ -5,6 +5,7 @@ import router from './router'
 import './assets/main.css'
 import vuetify from './plugins/vuetify'
 import { useStore } from './services/store'
+import { doLog } from './services/funLog'
 
 const pinia = createPinia()
 Vue.use(PiniaVuePlugin)
@@ -22,3 +23,5 @@ new Vue({
 	vuetify,
 	render: (h) => h(App)
 }).$mount('#app')
+
+doLog()

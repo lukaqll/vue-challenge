@@ -43,7 +43,7 @@ const router = new VueRouter({
 		},
 
 		/**
-		 * posts views
+		 * public posts views
 		 */
 		{
 			path: '/',
@@ -123,7 +123,7 @@ router.beforeResolve(async (to, from, next) => {
 	// logged user id
 	const userId = localStorage.getItem('user_id')
 
-	if (!!userId) {
+	if (!!userId && userId != 'null') {
 
 		// main loader
 		router.app.mainLoader = true

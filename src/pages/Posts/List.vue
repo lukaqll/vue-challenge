@@ -1,11 +1,12 @@
 <template>
 	<div>
-
 		<v-card flat rounded="xl">
 			<v-card-text>
 				<div class="row p-md-4">
 					<div class="col-12 text-right">
 						<div class="row">
+
+							<!-- header search form -->
 							<div class="col-md-10">
 								<v-text-field label="Search" dense outlined v-model="term" clearable>
 									<template slot="prepend">
@@ -14,6 +15,8 @@
 								</v-text-field>
 							</div>
 							<div class="col-md-2">
+
+								<!-- list modes -->
 								<v-btn-toggle dense>
 									<v-btn icon color="primary" @click="() => setMode('list')">
 										<v-icon small>fa fa-bars</v-icon>
@@ -22,13 +25,19 @@
 										<v-icon small>fa fa-th-large</v-icon>
 									</v-btn>
 								</v-btn-toggle>
+								<!-- end list modes -->
+
 							</div>
+							<!-- end header search form -->
+
 						</div>
 					</div>
-					<div class="col-12">
 
+					<!-- post list -->
+					<div class="col-12">
 						<div v-if="posts.length">
 
+							<!-- block mode -->
 							<div class="row" v-if="mode == 'block'">
 								<div class="col-md-6 d-flex" v-for="(item, i) in foundPosts" :key="i">
 									<v-card class="w-100" rounded="xl">
@@ -42,7 +51,9 @@
 									</v-card>
 								</div>
 							</div>
+							<!-- end block mode -->
 
+							<!-- list mode -->
 							<v-list v-else>
 								<v-list-item class="my-2" v-for="(item, i) in foundPosts" :key="i" three-line>
 									<v-list-item-content>
@@ -55,8 +66,11 @@
 									</v-list-item-content>
 								</v-list-item>
 							</v-list>
+							<!-- end list mode -->
+
 						</div>
 
+						<!-- list loader -->
 						<div class="row" v-else>
 							<div :class="`col-md-${mode=='block'?6:12}`" v-for="j in 6" :key="j">
 								<v-card :flat="mode!='block'" rounded="xl">
@@ -67,7 +81,12 @@
 								</v-card>
 							</div>
 						</div>
+						<!-- end list loader -->
+
 					</div>
+					<!-- end post list -->
+
+					<!-- pagination -->
 					<div class="col-12 d-flex justify-content-center align-items-center">
 						<v-btn @click="page = page - 1" :disabled="page <= 1" color="primary" icon>
 							<v-icon dese>fa fa-chevron-left</v-icon>
@@ -81,6 +100,8 @@
 							<v-icon dese>fa fa-chevron-right</v-icon>
 						</v-btn>
 					</div>
+					<!-- end pagination -->
+
 				</div>
 			</v-card-text>
 		</v-card>

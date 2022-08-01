@@ -18,7 +18,7 @@ export default {
 	components: { Hero, Dashboard },
 	computed: {
 		base() {
-			return this.$route.meta.base || 'hero'
+			return this.$route ? this.$route.meta.base : 'hero'
 		}
 	}
 };

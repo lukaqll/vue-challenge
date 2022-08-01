@@ -1,48 +1,41 @@
-# vue-challenge
 
-This template should help get you started developing with Vue 3 in Vite.
+# VueJS Developer Challenge
 
-## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Projeto de teste para aplicação da vaga.
 
-## Customize configuration
+link do desafio: https://gist.github.com/olimarferraz/fc4290ba8c0e4265d4aba106527dee14
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
 
-```sh
-npm install
+## Autor
+
+- [@lukaqll](https://github.com/lukaqll)
+E-mail para contato lukaquinellato@gmail.com
+## Instalação
+
+Instale vue-challenge com npm
+
+```bash
+  git clone https://github.com/lukaqll/vue-challenge.git
+  cd vue-challenge
+```
+    
+## Deploy
+
+Para fazer o deploy desse projeto rode
+
+```bash
+  npm install
 ```
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
+```bash
+  npm run build
 ```
 
-### Compile and Minify for Production
-
-```sh
-npm run build
+```bash
+  cd dist && npx serve -l 3050
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+abra a rota http://localhost:3050 em seu nvegador
 
-```sh
-npm run test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run build
-npm run test:e2e # or `npm run test:e2e:ci` for headless testing
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```

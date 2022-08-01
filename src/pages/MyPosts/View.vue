@@ -4,7 +4,6 @@
         <v-card :loading="loading" flat rounded="xl">
             <v-card-title>{{ post.title }}</v-card-title>
             <v-card-text>
-
                 <div class="row">
                     <div class="col-12">
                         <v-card flat outlined>
