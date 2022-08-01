@@ -8,7 +8,7 @@
             <v-card-text>
                 <profile @submit="update" :user="user" id="profile-form" :errors="errors"/>
                 <v-btn type="submit" form="profile-form" color="primary">
-                    <v-icon dense class="mr-3">far fat-check-circle</v-icon>
+                    <v-icon dense class="mr-3">far fa-check-circle</v-icon>
                     Save
                 </v-btn>
             </v-card-text>
