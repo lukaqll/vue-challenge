@@ -4,7 +4,7 @@
             <v-card flat rounded="xl">
                 <v-card-title>Sign In</v-card-title>
                 <v-card-text>
-                    <register @submit="register" id="register" :errors="errors"></register>
+                    <profile @submit="register" id="register" :errors="errors"></profile>
                     <v-btn color="primary" type="submit" form="register" block :loading="loading">Register</v-btn>
                 </v-card-text>
             </v-card>
@@ -15,10 +15,10 @@
 <script>
 
 import { useStorage } from '@vueuse/core'
-import Register from '../../components/Forms/Register.vue'
 import users from '../../repositories/users'
+import Profile from '../../components/Forms/Profile.vue'
 export default {
-    components: { Register },
+    components: { Profile },
 
     data: () => ({
         errors: [],

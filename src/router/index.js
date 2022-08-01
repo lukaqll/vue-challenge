@@ -6,6 +6,7 @@ import PostsCreate from '../pages/MyPosts/Create.vue'
 import PostsUpdate from '../pages/MyPosts/Update.vue'
 import PostsView from '../pages/MyPosts/View.vue'
 import DetailPostsView from '../pages/Posts/View.vue'
+import Profile from '../pages/Profile/index.vue'
 import Signin from '../pages/Auth/Signin.vue'
 import users from '../repositories/users'
 
@@ -40,6 +41,15 @@ const router = new VueRouter({
 			name: 'login',
 			component: Signin,
 			meta: { base: 'dashboard' }
+		},
+		{
+			path: '/profile',
+			name: 'Profile',
+			component: Profile,
+			meta: { 
+				base: 'dashboard',
+				auth: true
+			}
 		},
 
 		/**

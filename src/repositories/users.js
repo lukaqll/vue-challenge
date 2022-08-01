@@ -10,4 +10,11 @@ export default {
         const response = await http.post(`public/v2/users`, data)
         return response
     },
+
+    update: async (id, data) => {
+        const response = await http.put(`public/v2/users/${id}`, data)
+        return response
+    },
 }
+
+

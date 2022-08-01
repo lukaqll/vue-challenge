@@ -12,12 +12,10 @@
                     v-model="formData.email" :rules="rules.email"
                     :error-messages="errorMessageHandle('email')"
                 ></v-text-field>
-                <v-select
-                    dense outlined label="Gender"
-                    :items="genders"
-                    v-model="formData.gender"
-                    :error-messages="errorMessageHandle('gender')"
-                />
+                <v-radio-group v-model="formData.gender" :error-messages="errorMessageHandle('gender')">
+                    <v-radio value="male" label="Male"/>
+                    <v-radio value="female" label="Female"/>
+                </v-radio-group>
             </div>        
         </div>
     </v-form>
@@ -27,14 +25,20 @@
 export default {
 
     props: {
-        post: {type: Object, default: () => {}},
+        user: {type: Object, default: () => {}},
         errors: {type: Array, default: () => []},
         id: {type: String, default: 'register-form'}
+    },
+    
+    watch: {
+        user(v){
+            this.formData = {...v}
+        }
     },
 
     data(){
         return {
-            formData: {...this.post},
+            formData: {...this.user},
             rules: {
                 email: [
                     v => !!v || 'E-mail field is required',
